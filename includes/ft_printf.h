@@ -6,28 +6,39 @@
 /*   By: cjulienn <cjulienn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 13:47:53 by cjulienn          #+#    #+#             */
-/*   Updated: 2021/06/15 16:33:01 by cjulienn         ###   ########.fr       */
+/*   Updated: 2021/06/16 17:09:55 by cjulienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdarg.h> 
+
 typedef struct s_flags                       
 {                        
-    va_list		args;
-	int			tl_return;      // the actual return value (AKA total length)
-	int			percent;		// % flag indicating followin char is a proper flag
+    va_list		args;			// initialize variadic list
 	int			minus;			// the minus ('-') flag
 	int			is_zero;		// the 0 flag
 	int			point;			// the point ('.') flag
 	int			wildcard; 		// the wildcard ('*') flag     
 }    		   t_flags;
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h> 
-
-int	ft_printf(const char *format, ...);
+int			ft_printf(const char *format, ...);
+t_flags		*ft_initialize_flaglist(t_flags *flag_tab);
+void		ft_putnbr_base(int nbr, char *base);
+void		ft_print_hexadecimal(t_flags *t_flags);
+void		ft_print_capital_hexadecimal(t_flags *t_flags);
+void		ft_print_int(t_flags *flag_tab);
+void		ft_print_unsigned_int(t_flags *flag_tab);
+void		ft_print_char(t_flags *flag_tab);
+void		ft_print_string(t_flags *flag_tab);
+void		ft_print_pointer_address(t_flags *flag_tab);
+int			ft_zero_flag(t_flags *flag_tab, const char *format, int index);
+int			ft_wildcard_flag(t_flags *flag_tab, const char *format, int index);
+int			ft_minus_flag(t_flags *flag_tab, const char *format, int index);
+int 		ft_point_flag(t_flags *flag_tab, const char *format, int index);
 
 #endif

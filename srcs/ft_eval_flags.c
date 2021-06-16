@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_conversions_1.c                                 :+:      :+:    :+:   */
+/*   ft_eval_flags.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjulienn <cjulienn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 16:56:53 by cjulienn          #+#    #+#             */
-/*   Updated: 2021/06/16 12:23:37 by cjulienn         ###   ########.fr       */
+/*   Created: 2021/06/16 16:12:13 by cjulienn          #+#    #+#             */
+/*   Updated: 2021/06/16 17:07:14 by cjulienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h" // check the PATH
+#include "../includes/ft_printf.h"
 
-// functions that can handle the printing and format of conversion operators
-
-void	ft_print_int(t_flags *flag_tab)
+int	ft_zero_flag(t_flags *flag_tab, const char *format, int index)
 {
 	// TODO
 }
 
-void	ft_print_unsigned_int(t_flags *flag_tab)
+int	ft_wildcard_flag(t_flags *flag_tab, const char *format, int index)
 {
 	// TODO
 }
 
-void	ft_print_char(t_flags *flag_tab)
+int	ft_minus_flag(t_flags *flag_tab, const char *format, int index)
 {
 	// TODO
 }
 
-void	ft_print_string(t_flags *flag_tab)
-{
-	// TODO
-}
-
-void	ft_print_pointer_address(t_flags *flag_tab)
+int ft_point_flag(t_flags *flag_tab, const char *format, int index)
 {
 	// TODO
 }
