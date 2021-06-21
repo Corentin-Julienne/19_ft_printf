@@ -6,7 +6,7 @@
 /*   By: cjulienn <cjulienn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 13:47:55 by cjulienn          #+#    #+#             */
-/*   Updated: 2021/06/16 17:19:06 by cjulienn         ###   ########.fr       */
+/*   Updated: 2021/06/21 15:08:02 by cjulienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ t_flags	*ft_initialize_flaglist(t_flags *flag_tab) // initializing struct to 0
 	flag_tab->minus = 0;
 	flag_tab->is_zero = 0;
 	flag_tab->point = 0;
-	flag_tab->wildcard = 0; 	
+	flag_tab->wildcard = 0; 
+	flag_tab->rtn = 0;
+	flag_tab->width = 0;
+	flag_tab->precisions = 0;	
 	return (flag_tab);
 }
 

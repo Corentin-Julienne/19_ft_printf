@@ -6,7 +6,7 @@
 /*   By: cjulienn <cjulienn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 13:47:53 by cjulienn          #+#    #+#             */
-/*   Updated: 2021/06/16 17:09:55 by cjulienn         ###   ########.fr       */
+/*   Updated: 2021/06/21 15:07:23 by cjulienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,16 @@
 typedef struct s_flags                       
 {                        
     va_list		args;			// initialize variadic list
+	// flags
 	int			minus;			// the minus ('-') flag
 	int			is_zero;		// the 0 flag
 	int			point;			// the point ('.') flag
-	int			wildcard; 		// the wildcard ('*') flag     
+	int			wildcard; 		// the wildcard ('*') flag
+	// return value
+	int			rtn;			// the return value 
+	// width and precision
+	int			width;			// the width value
+	int			precisions;		// the precision value
 }    		   t_flags;
 
 int			ft_printf(const char *format, ...);
