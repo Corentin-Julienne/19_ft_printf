@@ -6,7 +6,7 @@
 /*   By: cjulienn <cjulienn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 13:47:55 by cjulienn          #+#    #+#             */
-/*   Updated: 2021/06/21 15:08:02 by cjulienn         ###   ########.fr       */
+/*   Updated: 2021/06/22 15:46:23 by cjulienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,10 @@ int	ft_printf(const char *format, ...)
 	size_t		i;
 	int			output;	
 
-	if (!format)
-		return (1);
 	flag_tab = (t_flags*)malloc(sizeof(t_flags));
 	if (!flag_tab)
-		return (1); // means something fucked up
+		return (-1); // means something fucked up
+	output = 0;
 	ft_initialize_flaglist(flag_tab); // initialize values to 0
 	va_start(flag_tab->args, format);
 	i = 0;

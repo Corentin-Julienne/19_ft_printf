@@ -6,7 +6,7 @@
 /*   By: cjulienn <cjulienn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 10:22:27 by cjulienn          #+#    #+#             */
-/*   Updated: 2021/06/21 13:50:45 by cjulienn         ###   ########.fr       */
+/*   Updated: 2021/06/22 15:17:37 by cjulienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@
 int	main(void)
 {
 	int		output;
-	// int		example;
-
-	// example = 123;
+	
 	printf("%11%\n");
-	output = printf("%11%\n");
+	output = printf("%11.11%\n");
 	printf("%d", output);
 	
 	return (0);

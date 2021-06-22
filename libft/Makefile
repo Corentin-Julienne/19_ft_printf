@@ -6,7 +6,7 @@
 #    By: cjulienn <cjulienn@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 12:18:50 by cjulienn          #+#    #+#              #
-#    Updated: 2021/05/20 15:45:41 by cjulienn         ###   ########.fr        #
+#    Updated: 2021/06/22 15:48:58 by cjulienn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,21 +43,18 @@ SRCS = ./ft_atoi.c \
 	  ./ft_strrchr.c \
 	  ./ft_substr.c \
 	  ./ft_tolower.c \
-	  ./ft_toupper.c
-	  
-BONUS =	$(SRCS) \
-		./ft_lstadd_back.c \
-		./ft_lstadd_front.c \
-		./ft_lstnew.c \
-		./ft_lstsize.c \
-		./ft_lstlast.c \
-		./ft_lstdelone.c \
-		./ft_lstclear.c \
-		./ft_lstiter.c \
-		./ft_lstmap.c
+	  ./ft_toupper.c \
+	  ./ft_lstadd_back.c \
+	  ./ft_lstadd_front.c \
+	  ./ft_lstnew.c \
+	  ./ft_lstsize.c \
+	  ./ft_lstlast.c \
+	  ./ft_lstdelone.c \
+	  ./ft_lstclear.c \
+	  ./ft_lstiter.c \
+	  ./ft_lstmap.c
 
 OBJS = $(SRCS:.c=.o)
-BONUS_OBJS = $(BONUS:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I.
@@ -65,25 +62,24 @@ CFLAGS = -Wall -Wextra -Werror -I.
 RM = rm -f
 
 NAME = libft.a
+
+AR = ar -rcs
 	
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
 
 $(NAME):	$(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
 all:	
 	$(NAME)
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re:		fclean $(NAME)
 
-bonus:	$(BONUS_OBJS)
-	ar -rcs $(NAME) $(BONUS_OBJS)
-
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
