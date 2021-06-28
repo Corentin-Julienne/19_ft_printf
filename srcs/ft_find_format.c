@@ -6,7 +6,7 @@
 /*   By: cjulienn <cjulienn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 17:00:09 by cjulienn          #+#    #+#             */
-/*   Updated: 2021/06/16 17:15:41 by cjulienn         ###   ########.fr       */
+/*   Updated: 2021/06/28 15:02:54 by cjulienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	ft_find_format(t_flags *flag_tab, const char *format, int index)
 {
-	
 	while (format[index] != '%' || ft_isalpha(format[index]) == 1)
 	{
 		if (format[index] == '-')

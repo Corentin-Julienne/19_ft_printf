@@ -6,7 +6,7 @@
 /*   By: cjulienn <cjulienn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 13:47:53 by cjulienn          #+#    #+#             */
-/*   Updated: 2021/06/21 15:07:23 by cjulienn         ###   ########.fr       */
+/*   Updated: 2021/06/28 16:05:22 by cjulienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_flags                       
 {                        
     va_list		args;			// initialize variadic list
+	const char	*format;		//the string contains as arg
 	// flags
 	int			minus;			// the minus ('-') flag
 	int			is_zero;		// the 0 flag
@@ -33,7 +34,7 @@ typedef struct s_flags
 }    		   t_flags;
 
 int			ft_printf(const char *format, ...);
-t_flags		*ft_initialize_flaglist(t_flags *flag_tab);
+void		ft_initialize_flaglist(t_flags *flag_tab);
 void		ft_putnbr_base(int nbr, char *base);
 void		ft_print_hexadecimal(t_flags *t_flags);
 void		ft_print_capital_hexadecimal(t_flags *t_flags);
